@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1729703464 source:c:\users\charr\onedrive\documents\ex_battleshippart2\main.cpp
+	<iostream>
+	"Player.h"
+
+1729869261 c:\users\charr\onedrive\documents\ex_battleshippart2\include\player.h
+	"Grid.h"
+
+1729869261 c:\users\charr\onedrive\documents\ex_battleshippart2\include\grid.h
+	"Ship.h"
+
+1729868224 c:\users\charr\onedrive\documents\ex_battleshippart2\include\ship.h
+
+1729703464 source:c:\users\charr\onedrive\documents\ex_battleshippart2\src\grid.cpp
+	"Grid.h"
+	<iostream>
+
+1729703464 source:c:\users\charr\onedrive\documents\ex_battleshippart2\src\player.cpp
+	"Player.h"
+	<iostream>
+
+1729869261 source:c:\users\charr\onedrive\documents\ex_battleshippart2\src\ship.cpp
+	"Ship.h"
+
