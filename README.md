@@ -14,3 +14,11 @@
       -bool Placement;
 -Main:
 tkt 
+
+
+Panatik :
+Board + Game (.h + .cpp)
+
+mathh60:
+tile et player (.h + .cpp)
+
