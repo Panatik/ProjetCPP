@@ -10,8 +10,8 @@ class Tile
 
     Ship(int size, int row, int col, bool isHorizontal);
 
-    bool checkHit(int hitRow, int hitCol); //vérifie si le navire a été touché
-    void markAsSunk(); //marque le navire "coulé"
+    //bool checkHit(int hitRow, int hitCol); //vérifie si le navire a été touché
+    //void markAsSunk(); //marque le navire "coulé"
 };
 
 #endif // TILE_H_INCLUDED

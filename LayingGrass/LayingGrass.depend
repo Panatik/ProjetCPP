@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1730993986 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.cpp
+	"Board.h"
+	<iostream>
+	<ctime>
+	<cmath>
+
+1730986335 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.h
+	"Tile.h"
+
+1730986198 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.h
+
+1730986978 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\main.cpp
+	<iostream>
+	"Board.h"
+
