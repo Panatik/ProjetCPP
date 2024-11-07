@@ -9,6 +9,9 @@ public:
     Tile* tiles[1]; // Pièces du joueur
     string Couleur; // Couleur du joueur
     string Nom; // Nom du joueur
+    int coupons;
+    int rocher;
+    int vol;
 
     Player();
     void placeShips(); //le joueur place les navires sur la grille

@@ -4,6 +4,10 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    int nbJoueur;
+
+    cout << "Combien de joueurs ? (9 max)" << endl;
+    cin >> nbJoueur >> endl;
+
     return 0;
 }
