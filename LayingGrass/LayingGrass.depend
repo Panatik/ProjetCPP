@@ -1,16 +1,43 @@
 # depslib dependency file v1.0
-1730993986 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.cpp
+1731595722 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.cpp
 	"Board.h"
 	<iostream>
 	<ctime>
 	<cmath>
 
-1730986335 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.h
+1731586477 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.h
 	"Tile.h"
 
-1730986198 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.h
+1731348397 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.h
 
-1730986978 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\main.cpp
+1731601958 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\main.cpp
 	<iostream>
 	"Board.h"
+	"Game.h"
+	"Player.h"
+	"Tile.h"
+	<windows.h>
+
+1731602935 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\game.cpp
+	"Game.h"
+	"Board.h"
+	"Player.h"
+	"Tile.h"
+	<iostream>
+
+1731599245 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\game.h
+	<vector>
+	"Tile.h"
+	"Board.h"
+	"Player.h"
+
+1731595758 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\player.h
+	<string>
+	<vector>
+
+1731603379 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\player.cpp
+	<iostream>
+	"Player.h"
+	<vector>
+	<algorithm>
 

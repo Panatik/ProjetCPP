@@ -8,7 +8,8 @@ class Tile
     bool Placement; // Booleen pour savoir s'il faut faire une rotation
     bool IsSet; // Savoir si la pièce à été utilisé
 
-    Ship(int size, int row, int col, bool isHorizontal);
+    Tile();
+    Tile(int size, int row, int col, bool isHorizontal);
 
     //bool checkHit(int hitRow, int hitCol); //vérifie si le navire a été touché
     //void markAsSunk(); //marque le navire "coulé"

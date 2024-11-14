@@ -1,21 +1,26 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
+#include <string>
+#include <vector>
 
-#include "Board.h"
-
-class Player {
+class Player
+{
+private:
+    std::string color;
+    std::string name;
+    int coupon;
 public:
-    Board board; // Le joueur peut se placer sur le plateau
-    Tile* tiles[1]; // Pièces du joueur
-    string Couleur; // Couleur du joueur
-    string Nom; // Nom du joueur
-    int coupons;
-    int rocher;
-    int vol;
 
-    Player();
-    //void placeShips(); //le joueur place les navires sur la grille
-    //bool attack(Player &opponent, int row, int col); //le joueur attaque l'adversaire
+    Player() = default; //constructeur par défaut
+    Player(std::vector<std::string>& vectorColors); //constructeur
+        void place();
+        void exchange();
+        void chooseName();
+        std::string getColor();
+        std::string getName();
+        std::string chooseColor(std::vector<std::string>& vectorColors);
+        int getCoupon();
+
 };
 
 #endif // PLAYER_H_INCLUDED

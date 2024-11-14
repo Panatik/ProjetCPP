@@ -10,8 +10,7 @@ class Board
     Tile* tile[96];  // Tableau pour stocker les pièces
 
     Board();
-    //void placeShip(Ship* ship); //placer les navires sur la grille
-    //bool checkHit(int row, int col); //vérifie si le navire est touché
+    Board(int NumberPlayer);
     void displayGrid(); //affiche la grille
 };
 
