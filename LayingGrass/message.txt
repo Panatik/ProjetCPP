@@ -1,0 +1,670 @@
+10000
+11110
+10000
+00000
+00000
+
+--Ceci est le bloc numéro: 2--
+10000
+10000
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 3--
+11110
+00010
+00110
+00000
+00010
+
+--Ceci est le bloc numéro: 4--
+10000
+10000
+11000
+00000
+00000
+
+--Ceci est le bloc numéro: 5--
+11110
+00000
+00000
+00000
+00000
+
+--Ceci est le bloc numéro: 6--
+10000
+11000
+10000
+00000
+00000
+
+--Ceci est le bloc numéro: 7--
+10000
+11111
+00000
+00000
+00000
+
+--Ceci est le bloc numéro: 8--
+11000
+01110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 9--
+10000
+11110
+10000
+00100
+00100
+
+--Ceci est le bloc numéro: 10--
+10000
+11000
+11110
+00010
+00010
+
+--Ceci est le bloc numéro: 11--
+10000
+11110
+01000
+00000
+00000
+
+--Ceci est le bloc numéro: 12--
+11100
+11100
+00000
+00000
+00000
+
+--Ceci est le bloc numéro: 13--
+10000
+11110
+00010
+00000
+00000
+
+--Ceci est le bloc numéro: 14--
+11000
+01100
+00100
+00100
+00000
+
+--Ceci est le bloc numéro: 15--
+10000
+11110
+11110
+00100
+00000
+
+--Ceci est le bloc numéro: 16--
+10000
+11110
+11110
+00000
+00000
+
+--Ceci est le bloc numéro: 17--
+10000
+11110
+11100
+00100
+00000
+
+--Ceci est le bloc numéro: 18--
+10100
+11100
+01000
+00000
+00000
+
+--Ceci est le bloc numéro: 19--
+10000
+10110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 20--
+10000
+11000
+01100
+00100
+00000
+
+--Ceci est le bloc numéro: 21--
+10000
+11100
+00110
+00100
+00000
+
+--Ceci est le bloc numéro: 22--
+10000
+11000
+11110
+00000
+00000
+
+--Ceci est le bloc numéro: 23--
+11000
+11000
+11000
+00000
+00000
+
+--Ceci est le bloc numéro: 24--
+11000
+01000
+01110
+00000
+00000
+
+--Ceci est le bloc numéro: 25--
+10000
+10000
+11000
+11000
+00000
+
+--Ceci est le bloc numéro: 26--
+10000
+11110
+01100
+00100
+00000
+
+--Ceci est le bloc numéro: 27--
+10000
+11100
+11110
+00100
+00000
+
+--Ceci est le bloc numéro: 28--
+11000
+01110
+11110
+00000
+00000
+
+--Ceci est le bloc numéro: 29--
+11000
+01110
+11100
+00100
+00000
+
+--Ceci est le bloc numéro: 30--
+10000
+11110
+01110
+00000
+00000
+
+--Ceci est le bloc numéro: 31--
+10000
+11110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 32--
+10000
+11110
+01100
+00100
+00000
+
+--Ceci est le bloc numéro: 33--
+10000
+11110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 34--
+10000
+11110
+01110
+00000
+00000
+
+--Ceci est le bloc numéro: 35--
+11000
+01110
+11110
+00000
+00000
+
+--Ceci est le bloc numéro: 36--
+10000
+11100
+11110
+00100
+00000
+
+--Ceci est le bloc numéro: 37--
+10000
+11110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 38--
+10000
+11110
+11110
+00000
+00000
+
+--Ceci est le bloc numéro: 39--
+10000
+11110
+11100
+00100
+00000
+
+--Ceci est le bloc numéro: 40--
+10000
+11110
+01110
+00000
+00000
+
+--Ceci est le bloc numéro: 41--
+10000
+11110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 42--
+10000
+11110
+01100
+00100
+00000
+
+--Ceci est le bloc numéro: 43--
+10000
+11100
+11110
+00100
+00000
+
+--Ceci est le bloc numéro: 44--
+11000
+01110
+11110
+00000
+00000
+
+--Ceci est le bloc numéro: 45--
+10000
+11110
+11100
+00100
+00000
+
+--Ceci est le bloc numéro: 46--
+10000
+11110
+01110
+00000
+00000
+
+--Ceci est le bloc numéro: 47--
+10000
+11110
+11100
+00000
+00000
+
+--Ceci est le bloc numéro: 48--
+10000
+11110
+01100
+00100
+00000
+
+--Ceci est le bloc numéro: 49--
+11100
+11110
+00000
+00100
+00000
+ 
+--Ceci est le bloc numéro: 50--
+10000
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 51--
+11000
+01110
+11100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 52--
+10000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 53--
+00000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 54--
+10000
+11110
+01100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 55--
+10000
+11100
+11110
+00100
+00000
+ 
+--Ceci est le bloc numéro: 56--
+11000
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 57--
+11000
+01110
+11100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 58--
+00000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 59--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 60--
+10000
+11110
+01100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 61--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 62--
+10000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 63--
+11000
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 64--
+10000
+11100
+11110
+00100
+00000
+ 
+--Ceci est le bloc numéro: 65--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 66--
+11100
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 67--
+00000
+01110
+11100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 68--
+10000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 69--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 70--
+10000
+11110
+01100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 71--
+10000
+11100
+11110
+00100
+00000
+ 
+--Ceci est le bloc numéro: 72--
+11000
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 73--
+11000
+01110
+11100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 74--
+10000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 75--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 76--
+10000
+11110
+01100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 77--
+10000
+11100
+11110
+00100
+00000
+ 
+--Ceci est le bloc numéro: 78--
+11000
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 79--
+11000
+01110
+11100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 80--
+10000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 81--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 82--
+10000
+11110
+01100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 83--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 84--
+10000
+11110
+01110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 85--
+11000
+01110
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 86--
+10000
+11100
+11110
+00100
+00000
+ 
+--Ceci est le bloc numéro: 87--
+10000
+11110
+11100
+00000
+00000
+ 
+--Ceci est le bloc numéro: 88--
+10000
+11110
+110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 89--
+11000
+01100
+11100
+00100
+00000
+ 
+--Ceci est le bloc numéro: 90--
+10000
+11110
+00010
+00000
+00000
+ 
+--Ceci est le bloc numéro: 91--
+10000
+10000
+10000
+11000
+00000
+ 
+--Ceci est le bloc numéro: 92--
+11110
+00000
+00000
+00000
+00000
+ 
+--Ceci est le bloc numéro: 93--
+11100
+00000
+00000
+00000
+00000
+ 
+--Ceci est le bloc numéro: 94--
+10000
+10010
+11110
+00000
+00000
+ 
+--Ceci est le bloc numéro: 95--
+11111
+00001
+00001
+00000
+00000
+ 
+--Ceci est le bloc numéro: 96--
+10000
+11000
+01110
+00000
+00000
