@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Tile.h"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -18,7 +19,6 @@ Game::Game(){
     for (int i = 0; i < 2; i++) {
             nbPlayers.emplace_back(vectorColors);
     }
-
     board = Board(2);
     board.displayGrid();
 }
@@ -39,9 +39,44 @@ Game::Game(int number){
             nbPlayers.emplace_back(vectorColors); //emplace_back rajoute à la fin de la liste du vecteur les informations que l'utilisateur est en train de rentrer
     }
 
+    //mélanger aléatoirement le vecteur de joueur
+    std::random_shuffle(nbPlayers.begin(), nbPlayers.end());
+
+    //initialisation des tuiles
+    alltiles = tile(1, 'a', 'a', "message.txt",
+                        {},
+                        {{'1', '0', '0', '0', '0'},
+                         {'0', '0', '0', '0', '0'},
+                         {'0', '0', '0', '0', '0'},
+                         {'0', '0', '0', '0', '0'},
+                         {'0', '0', '0', '0', '0'}});
+    alltiles.recupTiles(); //recup les tuiles pour les mettres dans alltiles
+    alltiles.setGameVectorTile(0); //initialise le vecteur des tuiles à 0 dans alltiles
+
     //construction de la grille
     board = Board(number); //appel du constructeur de Board.cpp
     board.displayGrid(); //affiche la grille
+}
+
+void Game::FirstRound(){
+
+    //boucle selon le nombre de joueurs
+    for(int i = 0; i < sizeof(nbPlayers); i++){
+        cout << nbPlayers[i].getColor() << "Player " << i+1 << " (" << nbPlayers[i].getName() << ") - Round 1:" << "\033[0m" << endl;
+
+        //boucle qui demande de placer une tuile jusqu'à que ce soit possible et la pose si c'est bon
+        while(true){
+            alltiles.choosePlaceTile(nbPlayers[i].getName());
+
+            bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), 20, true, i);
+
+            if(placeable){
+                alltiles.placeTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), i);
+                break;
+            }
+        }
+        board.displayGrid(); //affiche la grille
+    }
 }
 
 void Game::displayPlayers(){ //affiche les joueurs

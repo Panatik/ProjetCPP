@@ -1,16 +1,16 @@
 #ifndef BOARD_H_INCLUDED
 #define BOARD_H_INCLUDED
 
-#include "Tile.h"
+#include "tile.h"
 
 class Board
 {
     public:
-    char cellules[20][20];  // Grille de 10x10
-    Tile* tile[96];  // Tableau pour stocker les pièces
+    std::vector<std::vector<char>> cellules;  // Grille de 10x10
 
     Board();
     Board(int NumberPlayer);
+    std::vector<std::vector<char>>& getBoard(); //retourne le plateau
     void displayGrid(); //affiche la grille
 };
 

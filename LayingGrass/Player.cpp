@@ -20,10 +20,9 @@ void Player::chooseName(){
 }
 
 string Player::chooseColor(vector<string>& vectorColors) {
-    int result;
-    //demande l'index du vecteur de codes couleurs
-    cout << " - Enter the index of the color you want: ";
-    cin >> result;
+
+    //transforme le string en int
+    int result = IndexNumber();
 
     // Vérifie que l'index est valide sinon il redemande à l'utilisateur
     while(result <= 0 || result > vectorColors.size()){
@@ -33,6 +32,28 @@ string Player::chooseColor(vector<string>& vectorColors) {
     color = vectorColors[result - 1];
 
     return color;
+}
+
+int Player::IndexNumber(){ //fonction qui vérifie l'entrée de l'utilisateur dans un string jusqu'à que ce soit un int entre 2 et 9
+    string resultStr;
+
+    while(true){
+        cout << " - Enter the index of the color you want : ";
+        cin >> resultStr;
+
+        try{
+            int number = stoi(resultStr); //convertit le string nb en int dans number
+            if(number >= 1 && number <= 7){
+                return number;
+            } else {
+                cout << "/!\\ Only number between 1 and 7 !" << endl;
+            }
+        } catch (const std::invalid_argument&) {
+            cout << "/!\\ Only number !" << endl;
+        } catch (const std::out_of_range&) {
+            cout << "/!\\ Only number between 1 and 7 !" << endl;
+        }
+    }
 }
 
 string Player::getName(){

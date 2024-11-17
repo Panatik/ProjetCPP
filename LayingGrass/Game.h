@@ -13,9 +13,11 @@ class Game
 public:
     Board board;
     vector<Player> nbPlayers; // Vecteur d'entier pour le nombre de joueur
+    tile alltiles;
 
     Game(); //constructeur par défaut (2 joueurs)
     Game(int number); //constructeur
+    void FirstRound();
     void displayPlayers(); //méthode qui affiche les joueurs
     //void placeTiles(Ship* ship); //placer les tuiles sur la grille
 };

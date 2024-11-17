@@ -113,8 +113,8 @@ bool tile::placeableTile(vector<vector<char>> &board, vector<vector<char>> &tile
 }
 
 // Méthode choosePlaceTile : invite le joueur à entrer les coordonnées pour placer une tuile
-void tile::choosePlaceTile(string name, string color) {
-    cout << color << name << ", place your tile (X Y): " << RESET;
+void tile::choosePlaceTile(string name) {
+    cout << name << ", place your tile (X Y): " << RESET;
     cin >> x >> y;
 }
 
@@ -181,7 +181,7 @@ void tile::resetIndex() {
 }
 
 // Accesseur pour la première tuile
-vector<vector<char>> tile::getfirstTile() {
+vector<vector<char>>& tile::getfirstTile() {
     return firstTile;
 };
 

@@ -22,7 +22,7 @@ class tile
              std::vector<std::vector<char>> first_Tile = {{'1','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'}});
 
         // Méthode pour choisir la position de la tuile en fonction du nom et de la couleur
-        void choosePlaceTile(std::string name, std::string color);
+        void choosePlaceTile(std::string name);
 
         // Vérifie si la tuile est plaçable sur le plateau
         bool placeableTile(std::vector<std::vector<char>> &board, std::vector<std::vector<char>> &tile, char x, char y, int sizeboard, bool isFirstTile, int tour);
@@ -43,7 +43,7 @@ class tile
         void setIndex(int increment);
 
         // Accesseur pour obtenir la première tuile
-        std::vector<std::vector<char>> getfirstTile();
+        std::vector<std::vector<char>>& getfirstTile();
 
         // Méthode pour récupérer une collection de tuiles sous forme de dictionnaire (map)
         std::map<int,std::vector<std::vector<char>>> recupTiles();

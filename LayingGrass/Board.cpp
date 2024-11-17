@@ -8,7 +8,11 @@ Board::Board() {
     int exchange = round(1.5*2); // Calcul du nombre de cases coupons par rapport à 2 joueurs
     int robbery = 2; // Calcul du nombre de cases vol par rapport à 2 joueurs
     int x;
+
     std::srand(std::time(nullptr)); // Initialisation de la génération
+
+    cellules = std::vector<std::vector<char>>(20, std::vector<char>(20, '.'));
+
     for (int i = 0; i < 20; ++i) { // Parcours du tableau
         for (int j = 0; j < 20; ++j) {
             if (i != 0 && i != 19 && j != 0 && j != 19){ // Choisi aléatoirement un nombre entre 1 et 4 et si c'est 4 une case "roche" est placée (ne peut pas être placé sur les bords)
@@ -22,11 +26,7 @@ Board::Board() {
                 }else if (x == 2 && robbery > 0){
                     cellules[i][j] = 'R';
                     robbery--;
-                }else{
-                    cellules[i][j] = '.';
                 }
-            }else{
-                cellules[i][j] = '.';
             }
         }
     }
@@ -37,7 +37,11 @@ Board::Board(int NumberPlayer) {
     int exchange = round(1.5*NumberPlayer); // Calcul du nombre de cases coupons par rapport au nombre de joueurs
     int robbery = NumberPlayer; // Calcul du nombre de cases vol par rapport au nombre de joueurs
     int x;
+
     std::srand(std::time(nullptr)); // Initialisation de la génération
+
+    cellules = std::vector<std::vector<char>>(20, std::vector<char>(20, '.'));
+
     for (int i = 0; i < 20; ++i) { // Parcours du tableau
         for (int j = 0; j < 20; ++j) {
             if (i != 0 && i != 19 && j != 0 && j != 19){ // Choisi aléatoirement un nombre entre 1 et 4 et si c'est 4 une case "roche" est placée (ne peut pas être placé sur les bords)
@@ -51,18 +55,27 @@ Board::Board(int NumberPlayer) {
                 }else if (x == 2 && robbery > 0){
                     cellules[i][j] = 'R';
                     robbery--;
-                }else{
-                    cellules[i][j] = '.';
                 }
-            }else{
-                cellules[i][j] = '.';
             }
         }
     }
 }
 
+//retourne le double vecteur de cellules (en gros le tableau)
+std::vector<std::vector<char>>& Board::getBoard(){
+    return cellules;
+}
+
 void Board::displayGrid() {
+    std::cout << "  ";
+    for (char letter_line = 'A'; letter_line <= 'T'; ++letter_line) {
+        std::cout << letter_line << " ";
+    }
+    std::cout << std::endl;
+    char letter_col = 'A';
     for (int i = 0; i < 20; ++i) {
+        std::cout << letter_col << " ";
+        letter_col++;
         for (int j = 0; j < 20; ++j) {
             std::cout << cellules[i][j] << " ";
         }

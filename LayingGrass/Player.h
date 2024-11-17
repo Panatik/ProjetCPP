@@ -20,6 +20,7 @@ public:
         std::string getName();
         std::string chooseColor(std::vector<std::string>& vectorColors);
         int getCoupon();
+        int IndexNumber();
 
 };
 
