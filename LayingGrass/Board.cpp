@@ -37,14 +37,21 @@ Board::Board(int NumberPlayer) {
     int exchange = round(1.5*NumberPlayer); // Calcul du nombre de cases coupons par rapport au nombre de joueurs
     int robbery = NumberPlayer; // Calcul du nombre de cases vol par rapport au nombre de joueurs
     int x;
+    int sizeBoard;
 
     std::srand(std::time(nullptr)); // Initialisation de la génération
 
-    cellules = std::vector<std::vector<char>>(20, std::vector<char>(20, '.'));
+    //créer le plateau en fonction du nombre de joueurs
+    if(NumberPlayer <= 4){
+        sizeBoard = 20;
+    }else{
+        sizeBoard = 30;
+    }
+    cellules = std::vector<std::vector<char>>(sizeBoard, std::vector<char>(sizeBoard, '.'));
 
-    for (int i = 0; i < 20; ++i) { // Parcours du tableau
-        for (int j = 0; j < 20; ++j) {
-            if (i != 0 && i != 19 && j != 0 && j != 19){ // Choisi aléatoirement un nombre entre 1 et 4 et si c'est 4 une case "roche" est placée (ne peut pas être placé sur les bords)
+    for (int i = 0; i < sizeBoard; ++i) { // Parcours du tableau
+        for (int j = 0; j < sizeBoard; ++j) {
+            if (i != 0 && i != sizeBoard - 1 && j != 0 && j != sizeBoard - 1){ // Choisi aléatoirement un nombre entre 1 et 4 et si c'est 4 une case "roche" est placée (ne peut pas être placé sur les bords)
                 x = std::rand() % 4 + 1;
                 if (x == 4 && stone > 0){
                     cellules[i][j] = 'S';
@@ -66,17 +73,32 @@ std::vector<std::vector<char>>& Board::getBoard(){
     return cellules;
 }
 
-void Board::displayGrid() {
-    std::cout << "  ";
-    for (char letter_line = 'A'; letter_line <= 'T'; ++letter_line) {
-        std::cout << letter_line << " ";
+void Board::displayGrid(int NumberPlayer) {
+    //calcul la taille du plateau
+    int sizeBoard;
+    if(NumberPlayer <= 4){
+        sizeBoard = 20;
+    }else{
+        sizeBoard = 30;
     }
+
+    std::cout << "  ";
+
+    //affiche des lettres pour les lignes
+    char letter_line = 'A';
+    for (int h = 0; h < sizeBoard; ++h) {
+        std::cout << letter_line << " ";
+        letter_line++;
+    }
+
     std::cout << std::endl;
+
+    //affiche le plateau + des lettres pour les colonnes
     char letter_col = 'A';
-    for (int i = 0; i < 20; ++i) {
+    for (int i = 0; i < sizeBoard; ++i) {
         std::cout << letter_col << " ";
         letter_col++;
-        for (int j = 0; j < 20; ++j) {
+        for (int j = 0; j < sizeBoard; ++j) {
             std::cout << cellules[i][j] << " ";
         }
         std::cout << std::endl;

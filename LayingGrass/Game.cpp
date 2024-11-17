@@ -20,7 +20,7 @@ Game::Game(){
             nbPlayers.emplace_back(vectorColors);
     }
     board = Board(2);
-    board.displayGrid();
+    board.displayGrid(2);
 }
 
 Game::Game(int number){
@@ -55,7 +55,7 @@ Game::Game(int number){
 
     //construction de la grille
     board = Board(number); //appel du constructeur de Board.cpp
-    board.displayGrid(); //affiche la grille
+    board.displayGrid(number); //affiche la grille
 }
 
 void Game::FirstRound(){
@@ -75,7 +75,7 @@ void Game::FirstRound(){
                 break;
             }
         }
-        board.displayGrid(); //affiche la grille
+        board.displayGrid(nbPlayers.size()); //affiche la grille
     }
 }
 

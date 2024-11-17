@@ -38,8 +38,10 @@
 		<Unit filename="Game.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
+		<Unit filename="Tile.cpp" />
 		<Unit filename="Tile.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="message.txt" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

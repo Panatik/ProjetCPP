@@ -11,7 +11,7 @@ class Board
     Board();
     Board(int NumberPlayer);
     std::vector<std::vector<char>>& getBoard(); //retourne le plateau
-    void displayGrid(); //affiche la grille
+    void displayGrid(int NumberPlayer); //affiche la grille
 };
 
 
