@@ -20,6 +20,8 @@ public:
     void FirstRound();
     void displayPlayers(); //méthode qui affiche les joueurs
     //void placeTiles(Ship* ship); //placer les tuiles sur la grille
+    void victory(std::vector<std::vector<char>>& board);
+    char determineWinner(std::vector<std::vector<char>> &boardGame, int sizeboard);
 };
 
 #endif // GAME_H_INCLUDED

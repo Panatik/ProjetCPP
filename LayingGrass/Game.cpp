@@ -86,4 +86,35 @@ void Game::displayPlayers(){ //affiche les joueurs
     }
     cout << "Everybody have " << nbPlayers[a].getCoupon() << " Tile exchange coupon." << endl;
 }
+char Game::determineWinner(vector<vector<char>> &boardGame, int sizeboard) {
+    char winner = '.'; // Par défaut, le gagnant est '.' (aucun gagnant).
+    int maxSquareSize = 0; // Taille maximale d'un carré trouvé.
 
+    // Parcourt chaque cellule du plateau.
+    for (int i = 0; i < sizeboard; ++i) {
+        for (int j = 0; j < sizeboard; ++j) {
+            char currentPlayer = boardGame[i][j]; // Récupère le joueur actuel (cellule).
+
+            if (currentPlayer != '.') { // Ignore les cellules vides.
+                int squareSize = 1; // Taille initiale du carré.
+
+                // Vérifie si un carré plus grand peut être formé.
+                while (i + squareSize < sizeboard && // Assure que le carré reste dans les limites du plateau (en hauteur).
+                       j + squareSize < sizeboard && // Assure que le carré reste dans les limites du plateau (en largeur).
+                       boardGame[i + squareSize][j] == currentPlayer && // Vérifie si la colonne droite appartient au même joueur.
+                       boardGame[i][j + squareSize] == currentPlayer && // Vérifie si la ligne inférieure appartient au même joueur.
+                       boardGame[i + squareSize][j + squareSize] == currentPlayer) { // Vérifie si le coin en bas à droite appartient au même joueur.
+                    ++squareSize; // Augmente la taille du carré.
+                }
+
+                // Met à jour le gagnant si un carré plus grand est trouvé.
+                if (squareSize > maxSquareSize) {
+                    maxSquareSize = squareSize; // Met à jour la taille maximale du carré.
+                    winner = currentPlayer; // Définit le gagnant comme le joueur actuel.
+                }
+            }
+        }
+    }
+
+    return winner; // Retourne le gagnant ('1', '2', etc., ou '.' s'il n'y en a pas).
+}
