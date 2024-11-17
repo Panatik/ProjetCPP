@@ -10,7 +10,7 @@
 using namespace std;
 
 // Constructeur de la classe tile : initialise les attributs de la tuile
-tile::tile(int game_index, char co_x, char co_y, string file_tile, vector<int> game_Vector_Tile, vector<vector<char>> first_Tile) {
+tile::tile(int game_index, int co_x, int co_y, string file_tile, vector<int> game_Vector_Tile, vector<vector<char>> first_Tile) {
     index = game_index;
     x = co_x;
     y = co_y;
@@ -54,10 +54,10 @@ map<int, vector<vector<char>>> tile::recupTiles() {
 }
 
 // Méthode placeableTile : vérifie si une tuile peut être placée à une position spécifique sur le plateau
-bool tile::placeableTile(vector<vector<char>> &board, vector<vector<char>> &tile, char x, char y, int sizeboard, bool isFirstTile, int tour) {
+bool tile::placeableTile(vector<vector<char>> &board, vector<vector<char>> &tile, int x, int y, int sizeboard, bool isFirstTile, int tour) {
     char joueur = to_string(tour + 1)[0];
-    x = int(x) - 'A';
-    y = int(y) - 'A';
+    //x = int(x) - 'A';
+    //y = int(y) - 'A';
     int offsetX = -1;
     int offsetY = -1;
 
@@ -114,14 +114,18 @@ bool tile::placeableTile(vector<vector<char>> &board, vector<vector<char>> &tile
 
 // Méthode choosePlaceTile : invite le joueur à entrer les coordonnées pour placer une tuile
 void tile::choosePlaceTile(string name) {
-    cout << name << ", place your tile (X Y): " << RESET;
-    cin >> x >> y;
+    cout << name << ", place your tile (X): " << RESET;
+    cin >> x;
+    x--;
+    cout << name << ", place your tile (Y): " << RESET;
+    cin >> y;
+    y--;
 }
 
 // Méthode placeTile : place la tuile sur le plateau de jeu
-vector<vector<char>> tile::placeTile(vector<vector<char>>& board, vector<vector<char>>& tuile, char x, char y, int tour) {
-    x = int(x) - 'A';
-    y = int(y) - 'A';
+vector<vector<char>> tile::placeTile(vector<vector<char>>& board, vector<vector<char>>& tuile, int x, int y, int tour) {
+    //x = int(x) - 'A';
+    //y = int(y) - 'A';
     int offsetX = -1;
     int offsetY = -1;
 
@@ -154,12 +158,12 @@ vector<vector<char>> tile::placeTile(vector<vector<char>>& board, vector<vector<
 }
 
 // Accesseur pour la coordonnée x
-char tile::getX() {
+int tile::getX() {
     return x;
 }
 
 // Accesseur pour la coordonnée y
-char tile::getY() {
+int tile::getY() {
     return y;
 }
 

@@ -35,7 +35,7 @@ Game::Game(int number){
 
     //construction des joueurs dans le vecteur nbPlayers
     for (int i = 0; i < number; i++) { //pour le nombre de joueurs choisi on va appeler le constructeur de Player.cpp pour initialiser les variables à mettre dans le vecteur nbPlayers
-            cout << "Player " << i+1 << " :" << endl;
+            cout << endl << " - Player " << i+1 << " :" << endl;
             nbPlayers.emplace_back(vectorColors); //emplace_back rajoute à la fin de la liste du vecteur les informations que l'utilisateur est en train de rentrer
     }
 
@@ -51,24 +51,24 @@ Game::Game(int number){
                          {'0', '0', '0', '0', '0'},
                          {'0', '0', '0', '0', '0'}});
     alltiles.recupTiles(); //recup les tuiles pour les mettres dans alltiles
-    alltiles.setGameVectorTile(0); //initialise le vecteur des tuiles à 0 dans alltiles
+    alltiles.setGameVectorTile(96); //initialise le vecteur des tuiles à 0 dans alltiles
 
     //construction de la grille
-    board = Board(number); //appel du constructeur de Board.cpp
+    board = Board(number); //appel du constructe    ur de Board.cpp
     board.displayGrid(number); //affiche la grille
 }
 
 void Game::FirstRound(){
 
     //boucle selon le nombre de joueurs
-    for(int i = 0; i < sizeof(nbPlayers); i++){
+    for(int i = 0; i < nbPlayers.size(); i++){
         cout << nbPlayers[i].getColor() << "Player " << i+1 << " (" << nbPlayers[i].getName() << ") - Round 1:" << "\033[0m" << endl;
 
         //boucle qui demande de placer une tuile jusqu'à que ce soit possible et la pose si c'est bon
         while(true){
             alltiles.choosePlaceTile(nbPlayers[i].getName());
 
-            bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), 20, true, i);
+            bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), board.getSize(), true, i);
 
             if(placeable){
                 alltiles.placeTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), i);

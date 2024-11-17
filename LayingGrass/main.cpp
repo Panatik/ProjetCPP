@@ -12,7 +12,7 @@ int PlayersNumber(){ //fonction qui vérifie l'entrée de l'utilisateur dans un st
     string nb;
 
     while(true){
-        cout << " - How many players ? (9 max) :" << endl;
+        cout << "How many players ? (9 max) :" << endl << "> ";
         cin >> nb;
 
         try{

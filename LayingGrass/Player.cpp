@@ -14,7 +14,7 @@ Player::Player(vector<string>& vectorColors){
 void Player::chooseName(){
     //choix du nom
     string nameChoose;
-    cout << " - Enter your pseudonym here : ";
+    cout << "Enter your pseudonym here :" << endl << "> ";
     cin>>nameChoose;
     name = nameChoose;
 }
@@ -23,12 +23,6 @@ string Player::chooseColor(vector<string>& vectorColors) {
 
     //transforme le string en int
     int result = IndexNumber();
-
-    // Vérifie que l'index est valide sinon il redemande à l'utilisateur
-    while(result <= 0 || result > vectorColors.size()){
-        cout << "/!\\ Invalid choice, you need to put an index between 1 and " << vectorColors.size() << ": ";
-        cin >> result;
-    }
     color = vectorColors[result - 1];
 
     return color;
@@ -38,7 +32,7 @@ int Player::IndexNumber(){ //fonction qui vérifie l'entrée de l'utilisateur dans
     string resultStr;
 
     while(true){
-        cout << " - Enter the index of the color you want : ";
+        cout << "Enter the index of the color you want :" << endl << "> ";
         cin >> resultStr;
 
         try{

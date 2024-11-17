@@ -9,15 +9,15 @@ class tile
 {
     private:
         int index; // Indice ou identifiant de la tuile
-        char x; // Coordonnée x de la tuile
-        char y; // Coordonnée y de la tuile
+        int x; // Coordonnée x de la tuile
+        int y; // Coordonnée y de la tuile
         std::string ftile; // Nom du fichier associé à la tuile
         std::vector<std::vector<char>> firstTile; // Structure pour stocker la première tuile de jeu
         std::vector<int> gameVectorTile; // Vecteur pour stocker l'état du jeu associé aux tuiles
 
     public:
         // Constructeur de la classe tile avec des valeurs par défaut pour les paramètres
-        tile(int game_index = 1, char co_x = 'a', char co_y = 'a', std::string file_tile = "message.txt",
+        tile(int game_index = 1, int co_x = 1, int co_y = 1, std::string file_tile = "message.txt",
              std::vector<int> game_Vector_Tile = {},
              std::vector<std::vector<char>> first_Tile = {{'1','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'}});
 
@@ -25,16 +25,16 @@ class tile
         void choosePlaceTile(std::string name);
 
         // Vérifie si la tuile est plaçable sur le plateau
-        bool placeableTile(std::vector<std::vector<char>> &board, std::vector<std::vector<char>> &tile, char x, char y, int sizeboard, bool isFirstTile, int tour);
+        bool placeableTile(std::vector<std::vector<char>> &board, std::vector<std::vector<char>> &tile, int x, int y, int sizeboard, bool isFirstTile, int tour);
 
         // Place la tuile sur le plateau de jeu
-        std::vector<std::vector<char>> placeTile(std::vector<std::vector<char>>& board, std::vector<std::vector<char>>& tuile, char x, char y, int tour);
+        std::vector<std::vector<char>> placeTile(std::vector<std::vector<char>>& board, std::vector<std::vector<char>>& tuile, int x, int y, int tour);
 
         // Accesseur pour obtenir la coordonnée x
-        char getX();
+        int getX();
 
         // Accesseur pour obtenir la coordonnée y
-        char getY();
+        int getY();
 
         // Accesseur pour obtenir l'index
         int getIndex();
