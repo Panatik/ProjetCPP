@@ -55,3 +55,60 @@
 	<map>
 	<cstdlib>
 
+1731867305 source:c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\board.cpp
+	"Board.h"
+	<iostream>
+	<ctime>
+	<cmath>
+
+1731963726 c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\board.h
+	"Tile.h"
+	"Player.h"
+
+1731963726 c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\tile.h
+	<vector>
+	<string>
+	<map>
+
+1731867305 source:c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\main.cpp
+	<iostream>
+	"Board.h"
+	"Game.h"
+	"Player.h"
+	"Tile.h"
+	<windows.h>
+	<string>
+
+1731963468 c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\game.h
+	<vector>
+	"Tile.h"
+	"Board.h"
+	"Player.h"
+
+1731867305 c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\player.h
+	<string>
+	<vector>
+
+1731867305 source:c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\player.cpp
+	<iostream>
+	"Player.h"
+	<vector>
+	<algorithm>
+
+1731867305 source:c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\tile.cpp
+	<iostream>
+	"tile.h"
+	<string>
+	<vector>
+	<fstream>
+	<map>
+	<cstdlib>
+
+1731963491 source:c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\game.cpp
+	"Game.h"
+	"Board.h"
+	"Player.h"
+	"Tile.h"
+	<iostream>
+	<algorithm>
+

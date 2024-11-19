@@ -1,5 +1,6 @@
 #ifndef TILE_H
 #define TILE_H
+#define RESET   "\033[0m"
 #include <vector>
 #include <string>
 #include <map>
