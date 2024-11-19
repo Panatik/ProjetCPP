@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <iostream>
 #include "Board.h"
 #include "Game.h"
@@ -79,7 +78,7 @@ void end_game(tile& Newtiles, map<int, vector<vector<char>>>& dicoTiles, vector<
                 // Boucle jusqu'à ce qu'un placement valide soit trouvé.
                 while (!placeable) {
                     // Demande au joueur de choisir où placer la tuile.
-                    Newtiles.choosePlaceTile(players[ourgame.getTurn() % nbplayer].getName(), players[ourgame.getTurn()].getColor());
+                    Newtiles.choosePlaceTile(players[ourgame.getTurn() % nbplayer].getName());
 
                     // Vérifie si la tuile peut être placée à l'endroit choisi.
                     placeable = Newtiles.placeableTile(boardGame, dicoTiles[Newtiles.getGameVectorTile()[Newtiles.getIndex()]], Newtiles.getX(), Newtiles.getY(), sizeboard, false, ourgame.getTurn() % nbplayer);
@@ -98,146 +97,6 @@ void end_game(tile& Newtiles, map<int, vector<vector<char>>>& dicoTiles, vector<
     victory(boardGame, players, ourgame, sizeboard);
 }
 
-
-void playGame(){
-    int nbplayer, sizeboard;
-    cout<<RED<<"---- Laying Grass Game ----"<<RESET<<endl;
-    cout<<endl;
-    tie(nbplayer, sizeboard) = choiceNbPlayer(); /* 'tie' sert à décomposer un tuple pour pouvoir séparer le return dans 2 variable 'int' distinctes*/
-    vector<player> players = createPlayer(nbplayer); /* 'vector' contenant tout nos joueurs */
-    game ourgame(nbplayer); /* instance de notre jeu */
-    vector<vector<char>> boardGame = ourgame.createBoard(sizeboard); /* création du plateau de jeu */
-    board gameboard(sizeboard); /* intance de la class board, qui sert à l'affichage du plateau */
-    tile Newtiles; /* intance de la classe Tile */
-    map<int,vector<vector<char>>> dicoTiles = Newtiles.recupTiles(); /* dictionnaire contenant toutes les tuiles*/
-    Newtiles.setGameVectorTile(round(10.67 * nbplayer));
-
-    for(int start = 0; start<nbplayer; start++){
-        system("cls");
-        cout<<"--- Place your starting tiles ! ---"<<endl;
-        cout<<endl;
-        gameboard.display(boardGame, sizeboard, players); /* afficher le tableau */
-        bool placeable = false;
-        vector<vector<char>> firstTile = Newtiles.getfirstTile();
-        while(!placeable){
-            Newtiles.choosePlaceTile(players[ourgame.getTurn() % nbplayer].getName(), players[ourgame.getTurn()].getColor()); /* placer la première tuile*/
-            placeable = Newtiles.placeableTile(boardGame, firstTile, Newtiles.getX(), Newtiles.getY(), sizeboard, true, ourgame.getTurn()% nbplayer);
-        }
-        boardGame = Newtiles.placeTile(boardGame, firstTile, Newtiles.getX(), Newtiles.getY(), ourgame.getTurn()% nbplayer);
-        ourgame.setTurn();
-    }
-    while(ourgame.getTurn()< nbplayer * 10){ /* déroulement d'un tour de jeu */
-        gameturn(Newtiles, dicoTiles, boardGame, sizeboard, nbplayer, players, ourgame, gameboard);
-        ourgame.setTurn(); /* tour +1 */
-        Newtiles.setIndex(1); /* index +1 */
-        Newtiles.resetIndex(); /* si index supérieur à nbplayer*10.67 */
-    }
-    system("cls");
-    end_game(Newtiles, dicoTiles, boardGame, sizeboard, nbplayer, players, ourgame, gameboard);
-
-}
-int main(){
-    SetConsoleOutputCP(CP_UTF8);
-    playGame();
-    return 0;
-}
-=======
-#include <iostream>
-#include "Board.h"
-#include "Game.h"
-#include "Player.h"
-#include "Tile.h"
-#include <windows.h>
-#include <string>
-
-using namespace std;
-
-int PlayersNumber(){ //fonction qui vérifie l'entrée de l'utilisateur dans un string jusqu'à que ce soit un int entre 2 et 9
-    string nb;
-
-    while(true){
-        cout << "How many players ? (9 max) :" << endl << "> ";
-        cin >> nb;
-
-        try{
-            int number = stoi(nb); //convertit le string nb en int dans number
-            if(number >= 2 && number <= 9){
-                return number;
-            } else {
-                cout << "/!\\ Only number between 2 and 9 !" << endl;
-            }
-        } catch (const std::invalid_argument&) {
-            cout << "/!\\ Only number !" << endl;
-        } catch (const std::out_of_range&) {
-            cout << "/!\\ Only number between 2 and 9 !" << endl;
-        }
-    }
-}
-
-// Fonction pour déterminer et afficher le gagnant de la partie.
-void victory(vector<vector<char>>& boardGame, vector<Player> players, Game& ourgame, int& sizeboard) {
-    // Appelle une méthode pour déterminer le gagnant.
-    char winner = ourgame.determineWinner(boardGame, sizeboard);
-
-    // Convertit le caractère gagnant en un indice de joueur (ex: '1' -> index 0).
-    int joueur = winner - '1';
-
-    if (winner != '.') { // Vérifie s'il y a un gagnant ('.' signifie égalité ou aucune victoire).
-        cout << "the player " << players[joueur].getName() << " won the game" << endl;
-    } else { // S'il n'y a pas de gagnant, la partie est une égalité.
-        cout << "La partie se termine par une égalité.\n";
-    }
-}
-
-// Fonction qui gère la fin de partie, y compris l'utilisation d'un "coupon" pour placer une tuile bonus.
-void end_game(tile& Newtiles, map<int, vector<vector<char>>>& dicoTiles, vector<vector<char>>& boardGame, int& sizeboard, int& nbplayer, vector<Player>& players, Game& ourgame, Board& gameboard) {
-    cout << "--- END GAME ---" << endl;
-    cout << endl;
-
-    // Affiche le plateau de jeu final avec les informations des joueurs.
-    gameboard.display(boardGame, sizeboard, players);
-
-    // Parcours les joueurs pour vérifier s'ils possèdent un "coupon".
-    for (int loop = 0; loop < nbplayer; loop++) {
-        if (players[loop].getCoupon() == 1) { // Si le joueur possède un coupon.
-            char lettre = 'A'; // Variable pour stocker la réponse du joueur.
-            cout << players[loop].getName() << ": You still have your coupon" << endl;
-            cout << "Enter U to use it, and place a 1*1 tile" << endl;
-            cout << "Enter N if you don't want to use it" << endl;
-
-            // Boucle jusqu'à ce que le joueur saisisse une réponse valide ('U' ou 'N').
-            while (lettre != 'U' && lettre != 'N') {
-                cin >> lettre;
-            }
-
-            if (lettre == 'U') { // Si le joueur décide d'utiliser son coupon.
-                system("cls"); // Efface la console (peut être dépendant du système d'exploitation).
-                gameboard.display(boardGame, sizeboard, players); // Affiche à nouveau le plateau de jeu.
-
-                bool placeable = false; // Variable pour vérifier si le placement est valide.
-                vector<vector<char>> lastTile = Newtiles.getfirstTile(); // Obtient la dernière tuile du joueur.
-
-                // Boucle jusqu'à ce qu'un placement valide soit trouvé.
-                while (!placeable) {
-                    // Demande au joueur de choisir où placer la tuile.
-                    Newtiles.choosePlaceTile(players[ourgame.getTurn() % nbplayer].getName(), players[ourgame.getTurn()].getColor());
-
-                    // Vérifie si la tuile peut être placée à l'endroit choisi.
-                    placeable = Newtiles.placeableTile(boardGame, dicoTiles[Newtiles.getGameVectorTile()[Newtiles.getIndex()]], Newtiles.getX(), Newtiles.getY(), sizeboard, false, ourgame.getTurn() % nbplayer);
-                }
-
-                // Place la tuile sur le plateau de jeu.
-                boardGame = Newtiles.placeTile(boardGame, lastTile, Newtiles.getX(), Newtiles.getY(), ourgame.getTurn() % nbplayer);
-            }
-
-            // Passe au tour suivant après que le joueur a utilisé (ou non) son coupon.
-            ourgame.setTurn();
-        }
-    }
-
-    // Vérifie et affiche le gagnant après la fin de la partie.
-    victory(boardGame, players, ourgame, sizeboard);
-}
 
 
 int main()
@@ -256,4 +115,4 @@ int main()
 
     return 0;
 }
->>>>>>> 95e2ab9f1ddcb97ecb5339147ed3182db26de07e
+
