@@ -17,6 +17,11 @@ tile::tile(int game_index, int co_x, int co_y, string file_tile, vector<int> gam
     ftile = file_tile;
     firstTile = first_Tile;
     gameVectorTile = game_Vector_Tile;
+    myTiles = recupTiles();
+}
+
+map<int, vector<vector<char>>> tile::getmyTiles(){
+    return myTiles;
 }
 
 // Méthode recupTiles : charge des tuiles depuis un fichier et les stocke dans un dictionnaire
@@ -30,6 +35,7 @@ map<int, vector<vector<char>>> tile::recupTiles() {
     map<int, vector<vector<char>>> dictionnaireTiles;
     int i = 0;
     int key = 1;
+
     while (getline(fichier, line)) {
         if (i < 5) {
             vector<char> ligne;
@@ -212,7 +218,9 @@ vector<int> tile::getGameVectorTile() {
 void tile::displayCurrentTile(int index, map<int, vector<vector<char>>> dicoTiles) {
     for (int loop = 0; loop < 5; loop++) {
         for (int loop2 = 0; loop2 < 5; loop2++) {
-            if (dicoTiles[gameVectorTile[index]][loop][loop2] == '1') {
+            //std::cout << dicoTiles[gameVectorTile[index]][loop][loop2] << std::endl;
+            //if (dicoTiles[gameVectorTile[index]][loop][loop2] == '1') {
+            if (myTiles[index][loop][loop2] == '1') {
                 cout << "\u25A0" << " ";
             } else {
                 cout << "  ";

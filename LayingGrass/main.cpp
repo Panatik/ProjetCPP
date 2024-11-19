@@ -52,6 +52,7 @@ int main()
     Game test(number); //création d'une variable type Game avec le nombre de joueurs en paramètres
     //test.displayPlayers(); //test pour afficher les utilisateurs
     test.FirstRound(); //lance le premier tour pour placer la tuile 1x1
+    test.Rounds();
 
     return 0;
 }

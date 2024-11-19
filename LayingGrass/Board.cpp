@@ -52,14 +52,14 @@ Board::Board(int NumberPlayer) {
     for (int i = 0; i < sizeBoard; ++i) { // Parcours du tableau
         for (int j = 0; j < sizeBoard; ++j) {
             if (i != 0 && i != sizeBoard - 1 && j != 0 && j != sizeBoard - 1){ // Choisi aléatoirement un nombre entre 1 et 4 et si c'est 4 une case "roche" est placée (ne peut pas être placé sur les bords)
-                x = std::rand() % 4 + 1;
-                if (x == 4 && stone > 0){
+                x = std::rand() % 20 + 1;
+                if (x == 20 && stone > 0){
                     cellules[i][j] = 'S';
                     stone--;
-                }else if (x == 3 && exchange > 0){
+                }else if (x == 19 && exchange > 0){
                     cellules[i][j] = 'E';
                     exchange--;
-                }else if (x == 2 && robbery > 0){
+                }else if (x == 18 && robbery > 0){
                     cellules[i][j] = 'R';
                     robbery--;
                 }

@@ -15,12 +15,15 @@ class tile
         std::string ftile; // Nom du fichier associé à la tuile
         std::vector<std::vector<char>> firstTile; // Structure pour stocker la première tuile de jeu
         std::vector<int> gameVectorTile; // Vecteur pour stocker l'état du jeu associé aux tuiles
+        std::map<int, std::vector<std::vector<char>>> myTiles;
 
     public:
         // Constructeur de la classe tile avec des valeurs par défaut pour les paramètres
         tile(int game_index = 1, int co_x = 1, int co_y = 1, std::string file_tile = "message.txt",
              std::vector<int> game_Vector_Tile = {},
              std::vector<std::vector<char>> first_Tile = {{'1','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'},{'0','0','0','0','0'}});
+
+        std::map<int, std::vector<std::vector<char>>> getmyTiles();
 
         // Méthode pour choisir la position de la tuile en fonction du nom et de la couleur
         void choosePlaceTile(std::string name);

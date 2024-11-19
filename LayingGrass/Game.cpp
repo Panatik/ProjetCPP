@@ -50,7 +50,7 @@ Game::Game(int number){
                          {'0', '0', '0', '0', '0'},
                          {'0', '0', '0', '0', '0'},
                          {'0', '0', '0', '0', '0'}});
-    alltiles.recupTiles(); //recup les tuiles pour les mettres dans alltiles
+    dictiles = alltiles.recupTiles(); //recup les tuiles pour les mettres dans alltiles
     alltiles.setGameVectorTile(96); //initialise le vecteur des tuiles à 0 dans alltiles
 
     //construction de la grille
@@ -59,7 +59,6 @@ Game::Game(int number){
 }
 
 void Game::FirstRound(){
-
     //boucle selon le nombre de joueurs
     for(int i = 0; i < nbPlayers.size(); i++){
         cout << nbPlayers[i].getColor() << "Player " << i+1 << " (" << nbPlayers[i].getName() << ") - Round 1:" << "\033[0m" << endl;
@@ -78,6 +77,15 @@ void Game::FirstRound(){
         board.displayGrid(nbPlayers.size()); //affiche la grille
     }
 }
+
+void Game::Rounds(){
+    for(int i = 0; i < 9; i++){
+        for(int j = 1; j < 6; j++){
+            alltiles.displayCurrentTile(j, alltiles.getmyTiles());
+        }
+    }
+}
+
 Game::game(int player, int actualTurn){
     turn = actualTurn;
     nbplayer = player;
@@ -87,12 +95,7 @@ vector<vector<char>> Game::createBoard(int& sizeBoard) {
     vector<vector<char>> board(sizeBoard, vector<char>(sizeBoard, '.'));
     return board;
 }
-void Game::setTurn(){
-    turn+=1;
-}
-int Game::getTurn(){
-    return turn;
-}
+
 void Game::displayPlayers(){ //affiche les joueurs
     int a = 0;
     for(int i = 0; i < nbPlayers.size(); i++){ //parcours du vecteur nbPlayers selon sa taille pour afficher son nom selon sa couleur
