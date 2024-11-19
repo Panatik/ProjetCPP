@@ -121,17 +121,16 @@ bool tile::placeableTile(vector<vector<char>> &board, vector<vector<char>> &tile
 // Méthode choosePlaceTile : invite le joueur à entrer les coordonnées pour placer une tuile
 void tile::choosePlaceTile(string name) {
     cout << name << ", place your tile (X): " << RESET;
-    cin >> x;
-    x--;
-    cout << name << ", place your tile (Y): " << RESET;
     cin >> y;
     y--;
+    cout << name << ", place your tile (Y): " << RESET;
+    cin >> x;
+    x--;
 }
 
 // Méthode placeTile : place la tuile sur le plateau de jeu
 vector<vector<char>> tile::placeTile(vector<vector<char>>& board, vector<vector<char>>& tuile, int x, int y, int tour) {
-    //x = int(x) - 'A';
-    //y = int(y) - 'A';
+
     int offsetX = -1;
     int offsetY = -1;
 
@@ -266,7 +265,8 @@ void tile::flip(vector<vector<char>>& initialTile) {
 // Permet au joueur de choisir une nouvelle tuile par échange
 void tile::exchangeCoupon() {
     int new_index = 8;
-    cout << "Enter the index of the tile wanted from 1 to 5" << endl;
+    cout << "Enter the index of the tile wanted from 1 to 5" << endl << "> ";
+    cin >> new_index;
     while (new_index < 0 || new_index > 5) {
         cout << "Enter a valid number" << endl;
         cin >> new_index;

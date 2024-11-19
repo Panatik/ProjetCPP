@@ -8,7 +8,7 @@
 // Déclaration de la classe tile
 class tile
 {
-    private:
+    public:
         int index; // Indice ou identifiant de la tuile
         int x; // Coordonnée x de la tuile
         int y; // Coordonnée y de la tuile

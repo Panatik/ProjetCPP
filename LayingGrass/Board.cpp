@@ -77,7 +77,7 @@ int Board::getSize(){
     return sizeBoard;
 }
 
-void Board::displayGrid(int NumberPlayer) {
+void Board::displayGrid() {
     std::cout << "  ";
 
     //affiche des lettres pour les lignes

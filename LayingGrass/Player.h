@@ -8,9 +8,8 @@ class Player
 private:
     std::string color;
     std::string name;
-    int coupon;
 public:
-
+    int coupon;
     Player() = default; //constructeur par défaut
     Player(std::vector<std::string>& vectorColors); //constructeur
         void place();
