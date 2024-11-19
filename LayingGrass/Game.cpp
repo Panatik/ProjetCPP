@@ -132,3 +132,16 @@ char Game::determineWinner(vector<vector<char>> &boardGame, int sizeboard) {
 
     return winner; // Retourne le gagnant ('1', '2', etc., ou '.' s'il n'y en a pas).
 }
+void Game::victory(vector<vector<char>>& boardGame, vector<Player> players, Game& ourgame, int& sizeboard) {
+    // Appelle une méthode pour déterminer le gagnant.
+    char winner = ourgame.determineWinner(boardGame, sizeboard);
+
+    // Convertit le caractère gagnant en un indice de joueur (ex: '1' -> index 0).
+    int joueur = winner - '1';
+
+    if (winner != '.') { // Vérifie s'il y a un gagnant ('.' signifie égalité ou aucune victoire).
+        cout << "the player " << players[joueur].getName() << " won the game" << endl;
+    } else { // S'il n'y a pas de gagnant, la partie est une égalité.
+        cout << "La partie se termine par une égalité.\n";
+    }
+}

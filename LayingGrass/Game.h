@@ -27,7 +27,7 @@ class Game
         void nextTile();
         void setTurn();
         int getTurn();
-        void victory(std::vector<std::vector<char>>& board);
+        void victory(std::vector<std::vector<char>>& board,vector<Player> players, Game& ourgame, int& sizeboard);
         char determineWinner(std::vector<std::vector<char>> &boardGame, int sizeboard);
 
 };

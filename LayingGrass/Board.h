@@ -16,7 +16,7 @@ class Board
     std::vector<std::vector<char>>& getBoard(); //retourne le plateau
     int getSize(); //retourne la taille
     void displayGrid(int NumberPlayer); //affiche la grille
-    void display(const std::vector<std::vector<char>>& board, int& sizeboard, std::vector<Player>& players);
+
 };
 
 

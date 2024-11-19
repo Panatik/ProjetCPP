@@ -100,4 +100,3 @@ void Board::displayGrid(int NumberPlayer) {
         std::cout << std::endl;
     }
 }
-
