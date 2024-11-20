@@ -52,7 +52,7 @@ Game::Game(int number){
                          {'0', '0', '0', '0', '0'},
                          {'0', '0', '0', '0', '0'},
                          {'0', '0', '0', '0', '0'}});
-    dictiles = alltiles.recupTiles(); //recup les tuiles pour les mettres dans alltiles
+    dictiles = alltiles.myTiles; //recup les tuiles pour les mettres dans alltiles
     alltiles.setGameVectorTile(96); //initialise le vecteur des tuiles à 0 dans alltiles
 
     //construction de la grille
@@ -68,10 +68,10 @@ void Game::FirstRound(){
         while(true){
             alltiles.choosePlaceTile(nbPlayers[i].getName());
 
-            bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), board.getSize(), true, i);
+            bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), board.getSize(), true, i+1);
 
             if(placeable){
-                alltiles.placeTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), i);
+                alltiles.placeTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), i+1);
                 break;
             }
         }
@@ -82,18 +82,18 @@ void Game::Rounds(){
     string input;
     int num;
 
-    for(int i = 0; i < 8; i++){
+    for(int i = 0; i < 2; i++){
         for(int h = 0; h < nbplayer; h++){
             cout << nbPlayers[h].getColor() << "Player " << h+1 << " (" << nbPlayers[h].getName() << ") - Round " << i+2 << ":" << "\033[0m" << endl;
             cout << "Current Tile:" << endl;
 
-            alltiles.displayCurrentTile(alltiles.index, alltiles.getmyTiles());
+            alltiles.displayCurrentTile(alltiles.index, dictiles);
 
             cout << "Next Tiles:" << endl;
 
             for(int j = 1; j < 6; j++){
                 num = alltiles.index + j;
-                alltiles.displayCurrentTile(num, alltiles.getmyTiles());
+                alltiles.displayCurrentTile(num, dictiles);
             }
             num = 0;
 
@@ -108,7 +108,7 @@ void Game::Rounds(){
                     cout << "Queue:" << endl;
                     for(int j = 1; j < 6; j++){
                         num = alltiles.index + j;
-                        alltiles.displayCurrentTile(num, alltiles.getmyTiles());
+                        alltiles.displayCurrentTile(num, dictiles);
                     }
                 }else if(input == "E"){
                     if(nbPlayers[h].getCoupon() > 0){
@@ -123,7 +123,7 @@ void Game::Rounds(){
             }
 
             cout << "Tile to place:" << endl;
-            alltiles.displayCurrentTile(alltiles.index, alltiles.getmyTiles());
+            alltiles.displayCurrentTile(alltiles.index, dictiles);
 
             while(input != "P"){
                 input = "";
@@ -133,24 +133,23 @@ void Game::Rounds(){
                 if(input == "F"){
                     cout << "Tile to place:" << endl;
                     alltiles.flip(alltiles.myTiles[alltiles.index]);
-                    alltiles.displayCurrentTile(alltiles.index, alltiles.getmyTiles());
+                    alltiles.displayCurrentTile(alltiles.index, dictiles);
                 }else if(input == "R"){
                     cout << "Tile to place:" << endl;
                     alltiles.rotation90DegreesLeft(alltiles.myTiles[alltiles.index]);
-                    alltiles.displayCurrentTile(alltiles.index, alltiles.getmyTiles());
+                    alltiles.displayCurrentTile(alltiles.index, dictiles);
                 }else if(input != "F" && input != "R" && input != "P"){
                     cout << "/!\\ Enter valid input !" << endl << "> ";
-                    cin >> input;
                 }
             }
 
             while(true){
                 alltiles.choosePlaceTile(nbPlayers[i].getName());
 
-                bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), board.getSize(), true, i);
+                bool placeable = alltiles.placeableTile(board.getBoard(), alltiles.getfirstTile(), alltiles.getX(), alltiles.getY(), board.getSize(), true, h+1);
 
                 if(placeable){
-                    alltiles.placeTile(board.getBoard(), alltiles.myTiles[alltiles.index], alltiles.getX(), alltiles.getY(), i);
+                    alltiles.placeTile(board.getBoard(), alltiles.myTiles[alltiles.index], alltiles.getX(), alltiles.getY(), h+1);
                     break;
                 }
             }
@@ -159,16 +158,8 @@ void Game::Rounds(){
             alltiles.index++;
         }
     }
-}
 
-Game::game(int player, int actualTurn){
-    turn = actualTurn;
-    nbplayer = player;
-}
-
-vector<vector<char>> Game::createBoard(int& sizeBoard) {
-    vector<vector<char>> board(sizeBoard, vector<char>(sizeBoard, '.'));
-    return board;
+    victory(board.getBoard(), nbPlayers, board.sizeBoard);
 }
 
 void Game::displayPlayers(){ //affiche les joueurs
@@ -210,9 +201,9 @@ char Game::determineWinner(vector<vector<char>> &boardGame, int sizeboard) {
 
     return winner; // Retourne le gagnant ('1', '2', etc., ou '.' s'il n'y en a pas).
 }
-void Game::victory(vector<vector<char>>& boardGame, vector<Player> players, Game& ourgame, int& sizeboard) {
+void Game::victory(vector<vector<char>>& boardGame, vector<Player> players, int& sizeboard) {
     // Appelle une méthode pour déterminer le gagnant.
-    char winner = ourgame.determineWinner(boardGame, sizeboard);
+    char winner = determineWinner(boardGame, sizeboard);
 
     // Convertit le caractère gagnant en un indice de joueur (ex: '1' -> index 0).
     int joueur = winner - '1';

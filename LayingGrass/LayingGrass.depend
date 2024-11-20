@@ -1,19 +1,20 @@
 # depslib dependency file v1.0
-1731858037 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.cpp
+1732103960 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.cpp
 	"Board.h"
 	<iostream>
 	<ctime>
 	<cmath>
 
-1731858059 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.h
-	"tile.h"
+1732103960 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\board.h
+	"Tile.h"
+	"Player.h"
 
-1731857387 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.h
+1732103960 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.h
 	<vector>
 	<string>
 	<map>
 
-1731859650 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\main.cpp
+1732110877 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\main.cpp
 	<iostream>
 	"Board.h"
 	"Game.h"
@@ -22,7 +23,7 @@
 	<windows.h>
 	<string>
 
-1731859702 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\game.cpp
+1732111931 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\game.cpp
 	"Game.h"
 	"Board.h"
 	"Player.h"
@@ -30,23 +31,23 @@
 	<iostream>
 	<algorithm>
 
-1731769171 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\game.h
+1732110124 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\game.h
 	<vector>
 	"Tile.h"
 	"Board.h"
 	"Player.h"
 
-1731758849 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\player.h
+1732103960 c:\users\administrateur\desktop\projet\projetcpp\layinggrass\player.h
 	<string>
 	<vector>
 
-1731859623 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\player.cpp
+1732020788 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\player.cpp
 	<iostream>
 	"Player.h"
 	<vector>
 	<algorithm>
 
-1731859095 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.cpp
+1732111648 source:c:\users\administrateur\desktop\projet\projetcpp\layinggrass\tile.cpp
 	<iostream>
 	"tile.h"
 	<string>
@@ -54,6 +55,7 @@
 	<fstream>
 	<map>
 	<cstdlib>
+	<algorithm>
 
 1732019563 source:c:\users\etienne\onedrive - supinfo\bureau\prorpe\projetcpp\layinggrass\board.cpp
 	"Board.h"

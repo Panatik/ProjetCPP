@@ -5,6 +5,7 @@
 #include <fstream>
 #include <map>
 #include <cstdlib>
+#include <algorithm>
 #define RESET   "\033[0m"
 
 using namespace std;
@@ -61,9 +62,7 @@ map<int, vector<vector<char>>> tile::recupTiles() {
 
 // Méthode placeableTile : vérifie si une tuile peut être placée à une position spécifique sur le plateau
 bool tile::placeableTile(vector<vector<char>> &board, vector<vector<char>> &tile, int x, int y, int sizeboard, bool isFirstTile, int tour) {
-    char joueur = to_string(tour + 1)[0];
-    //x = int(x) - 'A';
-    //y = int(y) - 'A';
+    char joueur = to_string(tour)[0];
     int offsetX = -1;
     int offsetY = -1;
 
@@ -149,7 +148,7 @@ vector<vector<char>> tile::placeTile(vector<vector<char>>& board, vector<vector<
     }
 
     // Place la tuile sur le plateau
-    char joueur = to_string(tour + 1)[0];
+    char joueur = to_string(tour)[0];
     for (int i = 0; i < 5; ++i) {
         for (int j = 0; j < 5; ++j) {
             if (x + i - offsetX < board.size() && y + j - offsetY < board[0].size()) {

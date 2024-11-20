@@ -30,15 +30,6 @@ int PlayersNumber(){ //fonction qui vérifie l'entrée de l'utilisateur dans un st
     }
 }
 
-
-
-
-
-// Fonction qui gère la fin de partie, y compris l'utilisation d'un "coupon" pour placer une tuile bonus.
-
-
-
-
 int main()
 {
     // Active le support des codes ANSI
@@ -46,7 +37,6 @@ int main()
     system("color"); // Activer le support des couleurs ANSI
 
     //demande le nombre de joueurs
-
     int number = PlayersNumber();
 
     Game test(number); //création d'une variable type Game avec le nombre de joueurs en paramètres
@@ -56,4 +46,3 @@ int main()
 
     return 0;
 }
-
